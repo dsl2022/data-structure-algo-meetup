@@ -15,12 +15,9 @@ const depthFirst = (root) => {
   while (stack.length > 0) {
     const node = stack.pop();
     values.push(node.val);
-
     if (node.right !== null) stack.push(node.right);
-
     if (node.left !== null) stack.push(node.left);
   }
-
   return values;
 };
 
