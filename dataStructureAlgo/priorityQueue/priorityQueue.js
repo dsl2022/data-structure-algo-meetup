@@ -37,7 +37,7 @@ class PriorityQueue {
     }
   }
   siftUp(currentIdx, array) {
-    const parentIdx = Math.floor((currentIdx - 1) / 2);
+    let parentIdx = Math.floor((currentIdx - 1) / 2);
     while (
       currentIdx > 0 &&
       array[currentIdx].priority < array[parentIdx].priority
@@ -67,3 +67,22 @@ class PriorityQueue {
     return this.priorityQ[0];
   }
 }
+
+const queue = [
+  { value: "something", priority: 5 },
+  { value: "something", priority: 3 },
+  { value: "something", priority: 4 },
+  { value: "something", priority: 2 },
+  { value: "something", priority: 8 },
+  { value: "something", priority: 7 },
+  { value: "something", priority: 9 },
+  { value: "something", priority: 0 },
+];
+
+// console.log("original", queue);
+const pq = new PriorityQueue(queue);
+pq.showQueue();
+// console.log(pq.peek());
+// console.log(pq.remove());
+// pq.insert({ value: "somethingcool", priority: 1 });
+// console.log(pq.peek());
